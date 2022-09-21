@@ -1,7 +1,7 @@
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
 sudo apt-get update
-sudo apt-get install \
+sudo apt-get install -y \
     ca-certificates \
     curl \
     gnupg \
@@ -13,5 +13,7 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get intalll docker-compose
 echo Docker Version: $(docker --version)
+
