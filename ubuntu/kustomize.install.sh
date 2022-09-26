@@ -8,3 +8,5 @@ curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack
 
 # Install to /usr/local/bin
 sudo install -o root -g root -m 0755 kustomize /usr/local/bin/kustomize
+
+sudo rm -rf ./kustomize
