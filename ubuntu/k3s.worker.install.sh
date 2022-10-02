@@ -2,7 +2,7 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y curl
 
-curl -sfL https://get.k3s.io | sh -
+curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -
 
 cd ~
 mkdir .kube
@@ -13,5 +13,3 @@ sudo chown $(id -u):$(id -g) .kube/config
 echo "export KUBECONFIG=~/.kube/config" >> .bashrc
 echo 'alias k="kubectl"' >> .bashrc
 source .bashrc
-
-echo K3S_TOKEN = $(cat /var/lib/rancher/k3s/server/node-token)
