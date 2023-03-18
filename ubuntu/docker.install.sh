@@ -17,5 +17,9 @@ echo \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo apt-get install -y docker-compose
+
+sudo usermod -aG docker $USER
+newgrp docker
+
 echo Docker Version: $(docker --version)
 
